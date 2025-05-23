@@ -4,8 +4,9 @@ import { useNotification } from '../../contexts/NotificationContext';
 import Button from '../common/Button';
 import Input from '../common/Input';
 import { User, Phone, Mail, Lock, Award } from 'lucide-react';
-import { getLocalStorageData } from '../../utils/localStorage';
-
+// import { getLocalStorageData } from '../../utils/localStorage';
+import { getLocalStorageData } from '../../services/compatibleStorageService';  
+  
 interface RegisterFormProps {
   onToggleForm: () => void;
 }

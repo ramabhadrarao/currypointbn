@@ -5,6 +5,8 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Notification from './components/common/Notification';
 import { initializeLocalStorage } from './utils/localStorage';
+import StorageStatus from './components/common/StorageStatus';
+
 
 // Main App Content Component
 const AppContent: React.FC = () => {
@@ -25,6 +27,7 @@ const App: React.FC = () => {
       <NotificationProvider>
         <AppContent />
         <Notification />
+        <StorageStatus />
       </NotificationProvider>
     </AuthProvider>
   );

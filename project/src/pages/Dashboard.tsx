@@ -1,3 +1,4 @@
+// src/pages/Dashboard.tsx - Updated to include MongoDB Status
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import Header from '../components/layout/Header';
@@ -6,6 +7,7 @@ import AdminDashboard from '../components/admin/Dashboard';
 import CustomerDashboard from '../components/customer/Dashboard';
 import CustomerManagement from '../components/admin/CustomerManagement';
 import CouponManagement from '../components/admin/CouponManagement';
+import MongoSyncStatus from '../components/admin/MongoSyncStatus';  // Add this import
 import PaymentSection from '../components/customer/PaymentSection';
 import CouponSection from '../components/customer/CouponSection';
 import { initializeLocalStorage } from '../utils/localStorage';
@@ -41,6 +43,8 @@ const Dashboard: React.FC = () => {
           return <CustomerManagement />;
         case 'coupons':
           return <CouponManagement />;
+        case 'mongo-status':  // Add this case
+          return <MongoSyncStatus />;
         default:
           return <AdminDashboard />;
       }

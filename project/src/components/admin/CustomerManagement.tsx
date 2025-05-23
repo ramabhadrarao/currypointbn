@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getLocalStorageData, updateLocalStorageData } from '../../utils/localStorage';
+// import { getLocalStorageData, updateLocalStorageData } from '../../utils/localStorage';
+import { getLocalStorageData, updateLocalStorageData } from '../../services/compatibleStorageService';
 import { Customer } from '../../types';
 import Card from '../common/Card';
 import Button from '../common/Button';

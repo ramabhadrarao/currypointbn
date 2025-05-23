@@ -1,3 +1,4 @@
+// src/components/layout/Sidebar.tsx - Updated to include MongoDB Sync Status
 import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { 
@@ -9,7 +10,8 @@ import {
   Tag, 
   FileText,
   User,
-  History
+  History,
+  Database  // Add this import
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -66,6 +68,12 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, activeTab, onTabChange }) => 
       role: 'customer'
     },
     {
+      id: 'mongo-status',  // Add this new item
+      label: 'MongoDB Status',
+      icon: <Database size={20} />,
+      role: 'admin'
+    },
+    {
       id: 'settings',
       label: 'Settings',
       icon: <Settings size={20} />,
@@ -103,11 +111,18 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, activeTab, onTabChange }) => 
                 className={`
                   flex items-center w-full px-4 py-3 text-left
                   ${activeTab === item.id ? 'bg-amber-700' : 'hover:bg-amber-700'}
+                  ${item.id === 'mongo-status' ? 'border-t border-amber-700 mt-2 pt-3' : ''}
                 `}
                 onClick={() => onTabChange(item.id)}
               >
                 <span className="mr-3">{item.icon}</span>
                 <span>{item.label}</span>
+                {/* Add status indicator for MongoDB */}
+                {item.id === 'mongo-status' && (
+                  <span className="ml-auto">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  </span>
+                )}
               </button>
             </li>
           ))}
@@ -118,9 +133,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, activeTab, onTabChange }) => 
         <p className="text-sm text-amber-300">
           {userRole === 'admin' ? 'Admin Panel' : 'Customer Portal'} v1.0
         </p>
+        {/* Add MongoDB connection indicator */}
+        <div className="flex items-center mt-2 text-xs text-amber-200">
+          <Database size={12} className="mr-1" />
+          <span>MongoDB Ready</span>
+        </div>
       </div>
     </aside>
   );
 };
-
 export default Sidebar;

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import Card from '../common/Card';
-import { getLocalStorageData } from '../../utils/localStorage';
+// import { getLocalStorageData } from '../../utils/localStorage';
+import { getLocalStorageData } from '../../services/compatibleStorageService';
 import { Transaction, Coupon, Settings } from '../../types';
 import { CreditCard, Award, Ticket, Clock } from 'lucide-react';
 import { formatDateTime } from '../../utils/dateUtils';

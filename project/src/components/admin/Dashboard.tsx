@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../common/Card';
-import { getLocalStorageData } from '../../utils/localStorage';
+// import { getLocalStorageData } from '../../utils/localStorage';
+import { getLocalStorageData } from '../../services/compatibleStorageService';
 import { Customer, Transaction } from '../../types';
 import { Users, DollarSign, Award, CreditCard } from 'lucide-react';
 

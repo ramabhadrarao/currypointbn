@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import Card from '../common/Card';
-import { getLocalStorageData } from '../../utils/localStorage';
+// import { getLocalStorageData } from '../../utils/localStorage';
+import { getLocalStorageData } from '../../services/compatibleStorageService';
 import { Coupon } from '../../types';
 import { Tag, Calendar, DollarSign, AlertCircle } from 'lucide-react';
 

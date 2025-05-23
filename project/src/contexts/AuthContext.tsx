@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Customer, AuthContextType, UserRole } from '../types';
-import { getLocalStorageData, updateLocalStorageData } from '../utils/localStorage';
+// import { getLocalStorageData, updateLocalStorageData } from '../utils/localStorage';
+import { getLocalStorageData, updateLocalStorageData } from '../services/compatibleStorageService';
 import { getCurrentDate } from '../utils/dateUtils';
 
 // Create Auth Context
